@@ -1,6 +1,8 @@
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.JSlider;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -8,9 +10,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
 import javax.swing.JScrollPane;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
 
 public class PasswordGenerator extends JFrame {
 
@@ -18,6 +17,23 @@ public class PasswordGenerator extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} 
+		catch (UnsupportedLookAndFeelException e) {
+			System.out.println(e.getMessage());
+		}
+		catch (ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		catch (InstantiationException e) {
+			System.out.println(e.getMessage());
+		}
+		catch (IllegalAccessException e) {
+			System.out.println(e.getMessage());
+		}
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
